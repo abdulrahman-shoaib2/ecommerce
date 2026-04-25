@@ -1,45 +1,41 @@
-import { ApiClientParams } from "@/types/api";
-import { getSession } from "next-auth/react";
+import { IReqParams } from "@/interfaces/IReqParams";
+import { IReqOptions } from "@/interfaces/IReqOptions";
 
+export const routeAPI = async <T>({ endpoint, options = { method: 'GET' }, queries }: { endpoint: string, options?: IReqParams, queries?: Record<string, string> }): Promise<T> => {
+  //  Promise<IProductsApiResponse>
+  const root = process.env.NEXT_PUBLIC_BASE_URL;
+  const token: string = '';
+  const requestOptions: IReqOptions = { method: options.method || 'GET' }
+  let queryString: string = '';
 
-
-export const apiClient = async ({endpoint, options={method: 'GET', withToken:false}}:ApiClientParams) => {
-  const session = await getSession();
-  const token = session?.user.token;
-  
-  const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
-
-  const headers = {
-    "Content-Type": "application/json",
-    Authorization: `Bearer ${token}`,
+  if (JSON.stringify(queries) !== `{}` && queries) {
+    queryString = new URLSearchParams(queries).toString();
   }
-  
-  if(options.method !== "GET" && options.withToken != true){
-      options.headers={
-        ...headers,
-        ...options.headers,
-      }
+
+  if (options.Authorization) {
+    requestOptions.headers!.Authorization = token
   }
-  if(options.withToken === true){
-    options.headers={
-      token
-    }
+  if (options.token) {
+    requestOptions.headers!.token = token
   }
-  
-  try{
-    const response = await fetch(`${BASE_URL}${endpoint}`, {
-      ...options
+  if (options.contentType) {
+    requestOptions.headers!["Content-Type"] = options.contentType
+  }
+  if (options.body) {
+    requestOptions.body = options.body
+  }
+
+  try {
+    return await fetch(`${root}/${endpoint}${queryString ? '?' + queryString : ''}`, requestOptions).then((res) => {
+      if (!res.ok) throw new Error('routeAPI Error')
+      return res.json()
+
+    }).then((data) => {
+      console.log(data)
+      return data
     });
 
-    if (!response.ok) {
-      throw new Error("API Error");
-    }
-    const {data} = await response.json()
-    return data ;
-  }catch(e){
-    
-    throw new Error("Sever Error");
+  } catch (e) {
+    throw new Error("Internet Error");
   }
-
-
 };

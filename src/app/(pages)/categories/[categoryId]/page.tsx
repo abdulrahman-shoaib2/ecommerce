@@ -2,6 +2,10 @@ import React from "react";
 
 export default function page() {
   return (
+    <h1>categoryId</h1>
+  );
+}
+/*
     <main className="py-10">
       <div className="container max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 p-4">
         <div>
@@ -232,7 +236,7 @@ export default function page() {
           </div>
           <form className="space-y-7" noValidate>
             <div className="flex flex-col gap-2">
-              <label htmlFor="name">Name{/* */}*</label>
+              <label htmlFor="name">Name*</label>
               <input
                 type="text"
                 id="name"
@@ -243,7 +247,7 @@ export default function page() {
               />
             </div>
             <div className="flex flex-col gap-2">
-              <label htmlFor="email">Email{/* */}*</label>
+              <label htmlFor="email">Email*</label>
               <input
                 type="email"
                 id="email"
@@ -256,7 +260,7 @@ export default function page() {
             </div>
             <div className="flex flex-col gap-2">
               <div className="flex flex-col gap-2">
-                <label htmlFor="password">Password{/* */}*</label>
+                <label htmlFor="password">Password*</label>
                 <input
                   type="password"
                   id="password"
@@ -288,7 +292,7 @@ export default function page() {
               </div>
             </div>
             <div className="flex flex-col gap-2">
-              <label htmlFor="rePassword">Confirm Password{/* */}*</label>
+              <label htmlFor="rePassword">Confirm Password*</label>
               <input
                 type="password"
                 id="rePassword"
@@ -300,7 +304,7 @@ export default function page() {
               />
             </div>
             <div className="flex flex-col gap-2">
-              <label htmlFor="phone">Phone Number{/* */}*</label>
+              <label htmlFor="phone">Phone Number*</label>
               <input
                 type="tel"
                 id="phone"
@@ -320,18 +324,18 @@ export default function page() {
                   name="terms"
                 />
                 <label htmlFor="terms" className="ms-2">
-                  I agree to the{/* */}{" "}
+                  I agree to the{" "}
                   <a className="text-primary-600 hover:underline" href="/terms">
                     Terms of Service
                   </a>{" "}
-                  {/* */}and{/* */}{" "}
+                  and{" "}
                   <a
                     className="text-primary-600 hover:underline"
                     href="/privacy-policy"
                   >
                     Privacy Policy
                   </a>{" "}
-                  {/* */}*
+                  *
                 </label>
               </div>
             </div>
@@ -357,7 +361,7 @@ export default function page() {
             </button>
           </form>
           <p className="border-t pt-10 border-gray-300/30 my-4 text-center">
-            Already have an account?{/* */}{" "}
+            Already have an account?{" "}
             <a
               className="text-primary-600 hover:underline font-medium"
               href="/login"
@@ -368,5 +372,4 @@ export default function page() {
         </div>
       </div>
     </main>
-  );
-}
+*/ 

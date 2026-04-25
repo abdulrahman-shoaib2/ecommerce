@@ -8,7 +8,17 @@ const nextConfig: NextConfig = {
 				source: "/home", 
 				destination: '/',
 				permanent: true, 
-			}
+			},
+			{
+				source: "/register", 
+				destination: '/auth/register',
+				permanent: true, 
+			},
+			{
+				source: "/login", 
+				destination: '/auth/login',
+				permanent: true, 
+			},
 		]
 	},
   images: {
@@ -18,8 +28,19 @@ const nextConfig: NextConfig = {
         hostname: 'ecommerce.routemisr.com',
         pathname: '/*/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'dummyjson.com',
+        pathname: '/image/*/*/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.dummyjson.com',
+        pathname: '/product-images/*/*/**',
+      },
     ]
   },  
 };
+// "https://cdn.dummyjson.com/product-images/beauty/powder-canister/thumbnail.webp"
 
 export default nextConfig;

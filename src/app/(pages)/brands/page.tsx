@@ -1,6 +1,6 @@
+import BrandsSection from '@/components/BrandsSection'
 import PageHeader from '@/components/PageHeader'
 import { faTags } from '@fortawesome/free-solid-svg-icons'
-import React from 'react'
 
 export default function Brands() {
   const section = {
@@ -11,10 +11,14 @@ export default function Brands() {
           href:'/',
           displayAs:'Home'
         },
+        {
+          href:'/',
+          displayAs:'Brands'
+        },
       ],
       badge: {
         iconWrapper: {
-          bg:'white',
+          bg:'bg-white/20',
         },
         icon: {
           name:"fa-box-open",
@@ -28,9 +32,11 @@ export default function Brands() {
         desc:'Shop from your favorite brands'
       }
   }  
+
   return (
     <>
       <PageHeader {...section}/>
+      <BrandsSection />
     </>
 
   )
