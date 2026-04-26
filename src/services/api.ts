@@ -31,7 +31,6 @@ export const routeAPI = async <T>({ endpoint, options = { method: 'GET' }, queri
       return res.json()
 
     }).then((data) => {
-      console.log(data)
       return data
     });
 

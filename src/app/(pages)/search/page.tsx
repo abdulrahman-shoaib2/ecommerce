@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import React from "react";
 
 export default function page() {
@@ -6,9 +8,9 @@ export default function page() {
       <div className="bg-white border-b border-gray-100">
         <div className="container mx-auto px-4 py-6">
           <nav className="flex items-center gap-2 text-sm text-gray-500 mb-4">
-            <a className="hover:text-primary-600 transition-colors" href="/">
+            <Link className="hover:text-primary-600 transition-colors" href="/">
               Home
-            </a>
+            </Link>
             <span className="text-gray-300">/</span>
             <span className="text-gray-900 font-medium">Search Results</span>
           </nav>
@@ -175,18 +177,18 @@ export default function page() {
                     </div>
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    <button className="px-3 py-1.5 rounded-full text-xs font-medium transition-colors bg-gray-100 text-gray-600 hover:bg-gray-200">
+                    <Button className="px-3 py-1.5 rounded-full text-xs font-medium transition-colors bg-gray-100 text-gray-600 hover:bg-gray-200">
                       Under 500
-                    </button>
-                    <button className="px-3 py-1.5 rounded-full text-xs font-medium transition-colors bg-gray-100 text-gray-600 hover:bg-gray-200">
+                    </Button>
+                    <Button className="px-3 py-1.5 rounded-full text-xs font-medium transition-colors bg-gray-100 text-gray-600 hover:bg-gray-200">
                       Under 1K
-                    </button>
-                    <button className="px-3 py-1.5 rounded-full text-xs font-medium transition-colors bg-gray-100 text-gray-600 hover:bg-gray-200">
+                    </Button>
+                    <Button className="px-3 py-1.5 rounded-full text-xs font-medium transition-colors bg-gray-100 text-gray-600 hover:bg-gray-200">
                       Under 5K
-                    </button>
-                    <button className="px-3 py-1.5 rounded-full text-xs font-medium transition-colors bg-gray-100 text-gray-600 hover:bg-gray-200">
+                    </Button>
+                    <Button className="px-3 py-1.5 rounded-full text-xs font-medium transition-colors bg-gray-100 text-gray-600 hover:bg-gray-200">
                       Under 10K
-                    </button>
+                    </Button>
                   </div>
                 </div>
                 <hr className="border-gray-100" />
@@ -333,16 +335,16 @@ export default function page() {
                   </div>
                 </div>
                 <hr className="border-gray-100" />
-                <button className="w-full py-2.5 rounded-lg border border-gray-200 text-gray-600 text-sm font-medium hover:bg-gray-50 hover:border-gray-300 transition-colors">
+                <Button className="w-full py-2.5 rounded-lg border border-gray-200 text-gray-600 text-sm font-medium hover:bg-gray-50 hover:border-gray-300 transition-colors">
                   Clear All Filters
-                </button>
+                </Button>
               </div>
             </div>
           </aside>
           <main className="flex-1 min-w-0">
             <div className="flex items-center justify-between mb-6 gap-4 flex-wrap">
               <div className="flex items-center gap-4">
-                <button className="lg:hidden flex items-center gap-2 px-4 py-2 rounded-lg bg-white border border-gray-200 text-gray-700 text-sm font-medium hover:bg-gray-50 transition-colors">
+                <Button className="lg:hidden flex items-center gap-2 px-4 py-2 rounded-lg bg-white border border-gray-200 text-gray-700 text-sm font-medium hover:bg-gray-50 transition-colors">
                   <svg
                     data-prefix="fas"
                     data-icon="sliders"
@@ -357,9 +359,9 @@ export default function page() {
                     />
                   </svg>
                   Filters
-                </button>
+                </Button>
                 <div className="flex items-center gap-1 bg-white rounded-lg border border-gray-200 p-1">
-                  <button title="test" className="p-2 rounded-md transition-colors bg-primary-600 text-white">
+                  <Button title="test" className="p-2 rounded-md transition-colors bg-primary-600 text-white">
                     <svg
                       data-prefix="fas"
                       data-icon="grip-vertical"
@@ -373,8 +375,8 @@ export default function page() {
                         d="M128 40c0-22.1-17.9-40-40-40L40 0C17.9 0 0 17.9 0 40L0 88c0 22.1 17.9 40 40 40l48 0c22.1 0 40-17.9 40-40l0-48zm0 192c0-22.1-17.9-40-40-40l-48 0c-22.1 0-40 17.9-40 40l0 48c0 22.1 17.9 40 40 40l48 0c22.1 0 40-17.9 40-40l0-48zM0 424l0 48c0 22.1 17.9 40 40 40l48 0c22.1 0 40-17.9 40-40l0-48c0-22.1-17.9-40-40-40l-48 0c-22.1 0-40 17.9-40 40zM320 40c0-22.1-17.9-40-40-40L232 0c-22.1 0-40 17.9-40 40l0 48c0 22.1 17.9 40 40 40l48 0c22.1 0 40-17.9 40-40l0-48zM192 232l0 48c0 22.1 17.9 40 40 40l48 0c22.1 0 40-17.9 40-40l0-48c0-22.1-17.9-40-40-40l-48 0c-22.1 0-40 17.9-40 40zM320 424c0-22.1-17.9-40-40-40l-48 0c-22.1 0-40 17.9-40 40l0 48c0 22.1 17.9 40 40 40l48 0c22.1 0 40-17.9 40-40l0-48z"
                       />
                     </svg>
-                  </button>
-                  <button title="test" className="p-2 rounded-md transition-colors text-gray-500 hover:text-gray-700">
+                  </Button>
+                  <Button title="test" className="p-2 rounded-md transition-colors text-gray-500 hover:text-gray-700">
                     <svg
                       data-prefix="fas"
                       data-icon="list"
@@ -388,7 +390,7 @@ export default function page() {
                         d="M40 48C26.7 48 16 58.7 16 72l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24L40 48zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L192 64zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-288 0zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-288 0zM16 232l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24l-48 0c-13.3 0-24 10.7-24 24zM40 368c-13.3 0-24 10.7-24 24l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24l-48 0z"
                       />
                     </svg>
-                  </button>
+                  </Button>
                 </div>
               </div>
               <div className="flex items-center gap-2">
@@ -422,7 +424,7 @@ export default function page() {
               </span>
               <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">
                 "l"
-                <button title="test" className="hover:text-red-500">
+                <Button title="test" className="hover:text-red-500">
                   <svg
                     data-prefix="fas"
                     data-icon="xmark"
@@ -436,11 +438,11 @@ export default function page() {
                       d="M55.1 73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L147.2 256 9.9 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192.5 301.3 329.9 438.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.8 256 375.1 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192.5 210.7 55.1 73.4z"
                     />
                   </svg>
-                </button>
+                </Button>
               </span>
-              <button className="text-xs text-gray-500 hover:text-gray-700 underline ml-2">
+              <Button className="text-xs text-gray-500 hover:text-gray-700 underline ml-2">
                 Clear all
-              </button>
+              </Button>
             </div>
             <div className="text-center py-20">
               <div className="w-20 h-20 rounded-full bg-gray-100 flex items-center justify-center mx-auto mb-5">
@@ -465,9 +467,9 @@ export default function page() {
                 Try adjusting your search or filters to find what you're looking
                 for.
               </p>
-              <button className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary-600 text-white font-semibold hover:bg-primary-700 transition-colors">
+              <Button className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary-600 text-white font-semibold hover:bg-primary-700 transition-colors">
                 Clear Filters
-              </button>
+              </Button>
             </div>
           </main>
         </div>

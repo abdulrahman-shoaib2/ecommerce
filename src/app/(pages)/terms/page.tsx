@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function page() {
@@ -6,12 +7,12 @@ export default function page() {
       <div className="bg-gradient-to-br from-primary-600 via-primary-500 to-primary-400 text-white">
         <div className="container mx-auto px-4 py-12 sm:py-16">
           <nav className="flex items-center gap-2 text-sm text-white/70 mb-8">
-            <a
+            <Link
               className="hover:text-white transition-colors duration-200"
               href="/"
             >
               Home
-            </a>
+            </Link>
             <span className="text-white/40">/</span>
             <span className="text-white font-medium">Terms of Service</span>
           </nav>
@@ -485,18 +486,18 @@ export default function page() {
             </div>
             <p className="text-sm text-gray-600 leading-relaxed">
               If you have any questions about these Terms, please contact us at{" "}
-              <a
+              <Link
                 href="mailto:support@freshcart.com"
                 className="text-primary-600 hover:text-primary-700 font-semibold hover:underline"
               >
                 support@freshcart.com
-              </a>
+              </Link>
             </p>
           </section>
         </div>
         <div className="mt-12 pt-8 border-t border-gray-200">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <a
+            <Link
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gray-100 text-gray-700 hover:bg-gray-200 font-medium transition-all duration-200"
               href="/"
             >
@@ -514,13 +515,13 @@ export default function page() {
                 />
               </svg>
               Back to Home
-            </a>
-            <a
+            </Link>
+            <Link
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary-500 text-white hover:bg-primary-600 font-medium shadow-lg shadow-primary-500/25 transition-all duration-200"
               href="/privacy"
             >
               View Privacy Policy<span className="text-lg">→</span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

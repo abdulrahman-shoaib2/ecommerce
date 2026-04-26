@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import React from "react";
 
 export default function page() {
@@ -6,12 +8,12 @@ export default function page() {
       <div className="bg-gradient-to-br from-primary-600 via-primary-500 to-primary-400 text-white">
         <div className="container mx-auto px-4 py-10 sm:py-12">
           <nav className="flex items-center gap-2 text-sm text-white/70 mb-6">
-            <a
+            <Link
               className="hover:text-white transition-colors duration-200"
               href="/"
             >
               Home
-            </a>
+            </Link>
             <span className="text-white/40">/</span>
             <span className="text-white font-medium">My Account</span>
           </nav>
@@ -51,7 +53,7 @@ export default function page() {
               </div>
               <ul className="p-2">
                 <li>
-                  <a
+                  <Link
                     className="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 group text-gray-600 hover:bg-gray-50 hover:text-gray-900"
                     href="/profile/addresses"
                   >
@@ -84,10 +86,10 @@ export default function page() {
                         d="M311.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L243.2 256 73.9 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
                       />
                     </svg>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     className="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 group bg-primary-50 text-primary-700"
                     href="/profile/settings"
                   >
@@ -120,7 +122,7 @@ export default function page() {
                         d="M311.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L243.2 256 73.9 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
                       />
                     </svg>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>
@@ -200,7 +202,7 @@ export default function page() {
                       />
                     </div>
                     <div className="pt-4">
-                      <button
+                      <Button
                         type="submit"
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary-600 text-white font-semibold hover:bg-primary-700 transition-colors disabled:opacity-50 shadow-lg shadow-primary-600/25"
                       >
@@ -218,7 +220,7 @@ export default function page() {
                           />
                         </svg>
                         Save Changes
-                      </button>
+                      </Button>
                     </div>
                   </form>
                 </div>
@@ -280,7 +282,7 @@ export default function page() {
                           type="password"
                           
                         />
-                        <button
+                        <Button
                           title="a"
                           type="button"
                           className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
@@ -298,7 +300,7 @@ export default function page() {
                               d="M288 32c-80.8 0-145.5 36.8-192.6 80.6-46.8 43.5-78.1 95.4-93 131.1-3.3 7.9-3.3 16.7 0 24.6 14.9 35.7 46.2 87.7 93 131.1 47.1 43.7 111.8 80.6 192.6 80.6s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1 3.3-7.9 3.3-16.7 0-24.6-14.9-35.7-46.2-87.7-93-131.1-47.1-43.7-111.8-80.6-192.6-80.6zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64-11.5 0-22.3-3-31.7-8.4-1 10.9-.1 22.1 2.9 33.2 13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-12.2-45.7-55.5-74.8-101.1-70.8 5.3 9.3 8.4 20.1 8.4 31.7z"
                             />
                           </svg>
-                        </button>
+                        </Button>
                       </div>
                     </div>
                     <div>
@@ -314,7 +316,7 @@ export default function page() {
                           type="password"
                           
                         />
-                        <button
+                        <Button
                           title="a"
                           type="button"
                           className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
@@ -332,7 +334,7 @@ export default function page() {
                               d="M288 32c-80.8 0-145.5 36.8-192.6 80.6-46.8 43.5-78.1 95.4-93 131.1-3.3 7.9-3.3 16.7 0 24.6 14.9 35.7 46.2 87.7 93 131.1 47.1 43.7 111.8 80.6 192.6 80.6s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1 3.3-7.9 3.3-16.7 0-24.6-14.9-35.7-46.2-87.7-93-131.1-47.1-43.7-111.8-80.6-192.6-80.6zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64-11.5 0-22.3-3-31.7-8.4-1 10.9-.1 22.1 2.9 33.2 13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-12.2-45.7-55.5-74.8-101.1-70.8 5.3 9.3 8.4 20.1 8.4 31.7z"
                             />
                           </svg>
-                        </button>
+                        </Button>
                       </div>
                       <p className="text-xs text-gray-500 mt-1">
                         Must be at least 6 characters
@@ -350,7 +352,7 @@ export default function page() {
                           type="password"
                           
                         />
-                        <button
+                        <Button
                           title="a"
                           type="button"
                           className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
@@ -368,11 +370,11 @@ export default function page() {
                               d="M288 32c-80.8 0-145.5 36.8-192.6 80.6-46.8 43.5-78.1 95.4-93 131.1-3.3 7.9-3.3 16.7 0 24.6 14.9 35.7 46.2 87.7 93 131.1 47.1 43.7 111.8 80.6 192.6 80.6s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1 3.3-7.9 3.3-16.7 0-24.6-14.9-35.7-46.2-87.7-93-131.1-47.1-43.7-111.8-80.6-192.6-80.6zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64-11.5 0-22.3-3-31.7-8.4-1 10.9-.1 22.1 2.9 33.2 13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-12.2-45.7-55.5-74.8-101.1-70.8 5.3 9.3 8.4 20.1 8.4 31.7z"
                             />
                           </svg>
-                        </button>
+                        </Button>
                       </div>
                     </div>
                     <div className="pt-4">
-                      <button
+                      <Button
                         title="a"
                         type="submit"
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-600 text-white font-semibold hover:bg-amber-700 transition-colors disabled:opacity-50 shadow-lg shadow-amber-600/25"
@@ -391,7 +393,7 @@ export default function page() {
                           />
                         </svg>
                         Change Password
-                      </button>
+                      </Button>
                     </div>
                   </form>
                 </div>

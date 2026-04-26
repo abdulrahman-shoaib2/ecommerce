@@ -1,4 +1,5 @@
 import PageHeader from "@/components/PageHeader";
+import { Button } from "@/components/ui/button";
 import { formatPhoneNumber } from "@/helpers/utils";
 import { faFacebookF, faInstagram, faLinkedinIn, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faHeadset, faLocationDot, faPhone, faClock, faPaperPlane, faCircleQuestion, faArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -281,13 +282,13 @@ export default function page() {
                       defaultValue={""}
                     />
                   </div>
-                  <button
+                  <Button
                     type="submit"
                     className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-primary-600 text-white font-semibold hover:bg-primary-700 transition-colors disabled:opacity-70 disabled:cursor-not-allowed shadow-sm shadow-primary-600/20"
                   >
                     <FontAwesomeIcon icon={faPaperPlane} className="svg-inline--fa fa-paper-plane" />
                     Send Message
-                  </button>
+                  </Button>
                 </form>
               </div>
               <div className="mt-6 bg-primary-50 rounded-2xl p-6 border border-primary-100">

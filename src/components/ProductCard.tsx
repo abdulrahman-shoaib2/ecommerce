@@ -6,16 +6,16 @@ import { Button } from "./ui/button";
 import { faArrowsRotate, faEye, faHeart, faPlus, faStar, faStarHalfStroke } from "@fortawesome/free-solid-svg-icons";
 import { IProductDetails } from '@/interfaces/routeApi/response/IProduct';
 
-export default function ProductCard({ product }: { product: IProductDetails }) {
+export default function ProductCard({ product, classNames }: { product: IProductDetails, classNames?:string }) {
   return (
 
     <div
-      className="bg-white border border-gray-200 rounded-lg overflow-hidden">
+      className={`bg-white border border-gray-200 rounded-lg overflow-hidden ${classNames}`}>
       <div className="relative">
         <Image
           width={250}
           height={250}
-          className=" w-full object-contain bg-white"
+          className=" w-full max-h-80 min-h-80 object-contain bg-white"
           alt={product.title}
           src={product.imageCover}
           // src={product.thumbnail}
@@ -44,7 +44,7 @@ export default function ProductCard({ product }: { product: IProductDetails }) {
           </Link>
         </div>
       </div>
-      <div className="p-4">
+      <div className="p-4 flex flex-col justify-between h-43">
         {/* <div className="text-xs text-gray-500 mb-1">{product.category}</div> */}
         <div className="text-xs text-gray-500 mb-1">{product.category.name}</div>
         <h3
@@ -72,7 +72,7 @@ export default function ProductCard({ product }: { product: IProductDetails }) {
           <span className="text-xs text-gray-500">{product.ratingsAverage} ({product.ratingsQuantity})</span>
           {/* <span className="text-xs text-gray-500">{product.rating} ({ product.reviews.length})</span> */}
         </div>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between ">
           {
             product.priceAfterDiscount ?
               <div><span className="text-lg font-bold text-primary-600">{product.priceAfterDiscount.toFixed(0)} EGP</span><span className="text-sm text-gray-500 line-through ml-2">{product.price?.toFixed(0)} EGP</span></div>

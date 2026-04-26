@@ -1,5 +1,6 @@
 import CartCard from "@/components/CartCard";
 import PageHeader from "@/components/PageHeader";
+import { Button } from "@/components/ui/button";
 import { faArrowRight, faBoxOpen, faShoppingCart, faTrash, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
@@ -81,10 +82,10 @@ export default function Cart() {
                   >
                     <span>←</span> Continue Shopping
                   </Link>
-                  <button className="group flex items-center gap-2 text-sm text-gray-400 hover:text-red-500 transition-colors">
+                  <Button className="group bg-transparent flex items-center gap-2 text-sm text-gray-400 hover:text-red-500 transition-colors">
                     <FontAwesomeIcon icon={faTrash} className="svg-inline--fa fa-trash text-xs group-hover:scale-110 transition-transform " />
                     <span>Clear all items</span>
-                  </button>
+                  </Button>
                 </div>
               </div>
               <div className="lg:col-span-1">
@@ -122,7 +123,7 @@ export default function Cart() {
                         Don't have an account?{" "}
                         <Link
                           className="text-primary-600 hover:underline"
-                          href="/signup?redirect=/cart"
+                          href="/register?redirect=/cart"
                         >
                           Sign up
                         </Link>

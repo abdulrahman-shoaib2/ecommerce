@@ -1,8 +1,11 @@
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import React from "react";
 
 export default function page() {
   return (
     <h1>categoryId</h1>
+    
   );
 }
 /*
@@ -187,7 +190,7 @@ export default function page() {
           </h2>
           <p className="text-center">Start your fresh journey with us today</p>
           <div className="register-options flex gap-2 *:grow my-10">
-            <button
+            <Button
               type="button"
               className="btn bg-transparent border border-gray-300 hover:bg-gray-100 flex justify-center items-center disabled:opacity-50 disabled:cursor-not-allowed"
               aria-label="Sign up with Google"
@@ -206,8 +209,8 @@ export default function page() {
                 />
               </svg>
               <span>Google</span>
-            </button>
-            <button
+            </Button>
+            <Button
               type="button"
               className="btn bg-transparent border border-gray-300 hover:bg-gray-100 flex justify-center items-center disabled:opacity-50 disabled:cursor-not-allowed"
               aria-label="Sign up with Facebook"
@@ -226,7 +229,7 @@ export default function page() {
                 />
               </svg>
               <span>Facebook</span>
-            </button>
+            </Button>
           </div>
           <div
             className="divider relative w-full h-0.5 bg-gray-300/30 my-4 flex items-center before:content-['or'] before:absolute before:top-1/2 before:left-1/2 before:-translate-1/2 before:bg-white before:px-4"
@@ -325,21 +328,21 @@ export default function page() {
                 />
                 <label htmlFor="terms" className="ms-2">
                   I agree to the{" "}
-                  <a className="text-primary-600 hover:underline" href="/terms">
+                  <Link className="text-primary-600 hover:underline" href="/terms">
                     Terms of Service
-                  </a>{" "}
+                  </Link>{" "}
                   and{" "}
-                  <a
+                  <Link
                     className="text-primary-600 hover:underline"
                     href="/privacy-policy"
                   >
                     Privacy Policy
-                  </a>{" "}
+                  </Link>{" "}
                   *
                 </label>
               </div>
             </div>
-            <button
+            <Button
               type="submit"
               className="btn bg-primary-600 text-white hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed w-full transition-colors"
               aria-busy="false"
@@ -358,16 +361,16 @@ export default function page() {
                 />
               </svg>
               <span>Create My Account</span>
-            </button>
+            </Button>
           </form>
           <p className="border-t pt-10 border-gray-300/30 my-4 text-center">
             Already have an account?{" "}
-            <a
+            <Link
               className="text-primary-600 hover:underline font-medium"
               href="/login"
             >
               Sign In
-            </a>
+            </Link>
           </p>
         </div>
       </div>

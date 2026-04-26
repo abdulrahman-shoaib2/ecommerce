@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import React from "react";
 
 export default function ForgetPassword() {
@@ -227,14 +229,14 @@ export default function ForgetPassword() {
                   </svg>
                 </div>
               </div>
-              <button
+              <Button
                 type="submit"
                 className="w-full bg-primary-600 text-white py-3 px-4 rounded-xl hover:bg-primary-700 transition-all duration-200 font-semibold text-lg shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 Send Reset Code
-              </button>
+              </Button>
               <div className="text-center">
-                <a
+                <Link
                   className="inline-flex items-center gap-2 text-sm text-primary-600 hover:text-primary-700 font-medium transition-colors"
                   href="/login"
                 >
@@ -252,18 +254,18 @@ export default function ForgetPassword() {
                     />
                   </svg>
                   Back to Sign In
-                </a>
+                </Link>
               </div>
             </form>
             <div className="text-center mt-8 pt-6 border-t border-gray-100">
               <p className="text-gray-600">
                 Remember your password?{" "}
-                <a
+                <Link
                   className="text-primary-600 hover:text-primary-700 font-semibold transition-colors"
                   href="/login"
                 >
                   Sign In
-                </a>
+                </Link>
               </p>
             </div>
           </div>

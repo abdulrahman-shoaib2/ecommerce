@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import React from "react";
 
 export default function page() {
@@ -6,12 +8,12 @@ export default function page() {
       <div className="bg-gradient-to-br from-primary-600 via-primary-500 to-primary-400 text-white">
         <div className="container mx-auto px-4 py-10 sm:py-12">
           <nav className="flex items-center gap-2 text-sm text-white/70 mb-6">
-            <a
+            <Link
               className="hover:text-white transition-colors duration-200"
               href="/"
             >
               Home
-            </a>
+            </Link>
             <span className="text-white/40">/</span>
             <span className="text-white font-medium">My Account</span>
           </nav>
@@ -51,7 +53,7 @@ export default function page() {
               </div>
               <ul className="p-2">
                 <li>
-                  <a
+                  <Link
                     className="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 group bg-primary-50 text-primary-700"
                     href="/profile/addresses"
                   >
@@ -84,10 +86,10 @@ export default function page() {
                         d="M311.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L243.2 256 73.9 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
                       />
                     </svg>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     className="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 group text-gray-600 hover:bg-gray-50 hover:text-gray-900"
                     href="/profile/settings"
                   >
@@ -120,7 +122,7 @@ export default function page() {
                         d="M311.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L243.2 256 73.9 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
                       />
                     </svg>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>
@@ -136,7 +138,7 @@ export default function page() {
                     Manage your saved delivery addresses
                   </p>
                 </div>
-                <button className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary-600 text-white font-semibold hover:bg-primary-700 transition-colors shadow-lg shadow-primary-600/25">
+                <Button className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary-600 text-white font-semibold hover:bg-primary-700 transition-colors shadow-lg shadow-primary-600/25">
                   <svg
                     data-prefix="fas"
                     data-icon="plus"
@@ -151,7 +153,7 @@ export default function page() {
                     />
                   </svg>
                   Add Address
-                </button>
+                </Button>
               </div>
               <div className="bg-white rounded-3xl border border-gray-100 p-12 text-center">
                 <div className="w-20 h-20 rounded-full bg-gray-100 flex items-center justify-center mx-auto mb-5">
@@ -176,7 +178,7 @@ export default function page() {
                   Add your first delivery address to make checkout faster and
                   easier.
                 </p>
-                <button className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary-600 text-white font-semibold hover:bg-primary-700 transition-colors shadow-lg shadow-primary-600/25">
+                <Button className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary-600 text-white font-semibold hover:bg-primary-700 transition-colors shadow-lg shadow-primary-600/25">
                   <svg
                     data-prefix="fas"
                     data-icon="plus"
@@ -191,7 +193,7 @@ export default function page() {
                     />
                   </svg>
                   Add Your First Address
-                </button>
+                </Button>
               </div>
             </div>
           </main>

@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import React from "react";
 
 export default function VerifyCode() {
@@ -231,22 +232,22 @@ export default function VerifyCode() {
               <div className="text-center">
                 <p className="text-sm text-gray-500">
                   Didn't receive the code?{" "}
-                  <button
+                  <Button
                     type="button"
                     className="text-primary-600 hover:text-primary-700 font-semibold transition-colors"
                   >
                     Resend Code
-                  </button>
+                  </Button>
                 </p>
               </div>
-              <button
+              <Button
                 type="submit"
                 className="w-full bg-primary-600 text-white py-3 px-4 rounded-xl hover:bg-primary-700 transition-all duration-200 font-semibold text-lg shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 Verify Code
-              </button>
+              </Button>
               <div className="text-center">
-                <button
+                <Button
                   type="button"
                   className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-primary-600 font-medium transition-colors"
                 >
@@ -264,7 +265,7 @@ export default function VerifyCode() {
                     />
                   </svg>
                   Change email address
-                </button>
+                </Button>
               </div>
             </form>
           </div>

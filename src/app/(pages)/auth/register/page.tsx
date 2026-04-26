@@ -1,3 +1,11 @@
+import { Button } from "@/components/ui/button";
+import { getStarRating } from "@/lib/utils";
+import img from '@/assets/media/review-author.webp'
+import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
+import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export default function Register() {
@@ -85,86 +93,27 @@ export default function Register() {
           </ul>
           <div className="review bg-white shadow-sm p-4 rounded-md">
             <div className="author flex items-center gap-4 mb-4">
-              <img
+              <Image
                 alt='test'
                 loading="lazy"
-                width={512}
-                height={512}
+                width={100}
+                height={100}
                 decoding="async"
                 data-nimg={1}
                 className="size-12 rounded-full"
                 style={{ color: "transparent" }}
-                srcSet="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Freview-author.04728971.png&w=640&q=75 1x, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Freview-author.04728971.png&w=1080&q=75 2x"
-                src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Freview-author.04728971.png&w=1080&q=75"
+                src={img}
               />
               <div>
                 <h3>Sarah Johnson</h3>
                 <div className="rating *:text-yellow-300">
-                  <svg
-                    data-prefix="fas"
-                    data-icon="star"
-                    className="svg-inline--fa fa-star"
-                    role="img"
-                    viewBox="0 0 576 512"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"
-                    />
-                  </svg>
-                  <svg
-                    data-prefix="fas"
-                    data-icon="star"
-                    className="svg-inline--fa fa-star"
-                    role="img"
-                    viewBox="0 0 576 512"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"
-                    />
-                  </svg>
-                  <svg
-                    data-prefix="fas"
-                    data-icon="star"
-                    className="svg-inline--fa fa-star"
-                    role="img"
-                    viewBox="0 0 576 512"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"
-                    />
-                  </svg>
-                  <svg
-                    data-prefix="fas"
-                    data-icon="star"
-                    className="svg-inline--fa fa-star"
-                    role="img"
-                    viewBox="0 0 576 512"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"
-                    />
-                  </svg>
-                  <svg
-                    data-prefix="fas"
-                    data-icon="star"
-                    className="svg-inline--fa fa-star"
-                    role="img"
-                    viewBox="0 0 576 512"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"
-                    />
-                  </svg>
+                  {
+                    getStarRating(5).map((star, index)=>{
+                      return (
+                        <FontAwesomeIcon key={'rating_'+index} icon={star} className="" />
+                      )
+                    })
+                  }
                 </div>
               </div>
             </div>
@@ -185,42 +134,18 @@ export default function Register() {
           <div className="register-options flex gap-2 *:grow my-10">
             <button
               type="button"
-              className="btn bg-transparent border border-gray-300 hover:bg-gray-100 flex justify-center items-center disabled:opacity-50 disabled:cursor-not-allowed"
+              className="btn rounded-md p-2 bg-transparent border border-gray-300 hover:bg-gray-100 flex justify-center items-center disabled:opacity-50 disabled:cursor-not-allowed"
               aria-label="Sign up with Google"
             >
-              <svg
-                data-prefix="fab"
-                data-icon="google"
-                className="svg-inline--fa fa-google me-2 text-red-600"
-                role="img"
-                viewBox="0 0 512 512"
-                aria-hidden="true"
-              >
-                <path
-                  fill="currentColor"
-                  d="M500 261.8C500 403.3 403.1 504 260 504 122.8 504 12 393.2 12 256S122.8 8 260 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9c-88.3-85.2-252.5-21.2-252.5 118.2 0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9l-140.8 0 0-85.3 236.1 0c2.3 12.7 3.9 24.9 3.9 41.4z"
-                />
-              </svg>
+              <FontAwesomeIcon icon={faGoogle} className="svg-inline--fa fa-google me-2 text-red-600" />
               <span>Google</span>
             </button>
             <button
               type="button"
-              className="btn bg-transparent border border-gray-300 hover:bg-gray-100 flex justify-center items-center disabled:opacity-50 disabled:cursor-not-allowed"
+              className="btn rounded-md p-2 bg-transparent border border-gray-300 hover:bg-gray-100 flex justify-center items-center disabled:opacity-50 disabled:cursor-not-allowed"
               aria-label="Sign up with Facebook"
             >
-              <svg
-                data-prefix="fab"
-                data-icon="facebook"
-                className="svg-inline--fa fa-facebook me-2 text-blue-600"
-                role="img"
-                viewBox="0 0 512 512"
-                aria-hidden="true"
-              >
-                <path
-                  fill="currentColor"
-                  d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5l0-170.3-52.8 0 0-78.2 52.8 0 0-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4l0 70.8c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2l0 27.8 83.6 0-14.4 78.2-69.3 0 0 175.9C413.8 494.8 512 386.9 512 256z"
-                />
-              </svg>
+              <FontAwesomeIcon icon={faFacebook} className="svg-inline--fa fa-facebook me-2 text-blue-600" />
               <span>Facebook</span>
             </button>
           </div>
@@ -321,16 +246,16 @@ export default function Register() {
                 />
                 <label htmlFor="terms" className="ms-2">
                   I agree to the{/* */}{" "}
-                  <a className="text-primary-600 hover:underline" href="/terms">
+                  <Link className="text-primary-600 hover:underline" href="/terms">
                     Terms of Service
-                  </a>{" "}
+                  </Link>{" "}
                   {/* */}and{/* */}{" "}
-                  <a
+                  <Link
                     className="text-primary-600 hover:underline"
                     href="/privacy-policy"
                   >
                     Privacy Policy
-                  </a>{" "}
+                  </Link>{" "}
                   {/* */}*
                 </label>
               </div>
@@ -340,30 +265,18 @@ export default function Register() {
               className="p-3 rounded-xl font-semibold bg-primary-600 text-white hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed w-full transition-colors"
               aria-busy="false"
             >
-              <svg
-                data-prefix="fas"
-                data-icon="user-plus"
-                className="svg-inline--fa fa-user-plus me-2"
-                role="img"
-                viewBox="0 0 640 512"
-                aria-hidden="true"
-              >
-                <path
-                  fill="currentColor"
-                  d="M136 128a120 120 0 1 1 240 0 120 120 0 1 1 -240 0zM48 482.3C48 383.8 127.8 304 226.3 304l59.4 0c98.5 0 178.3 79.8 178.3 178.3 0 16.4-13.3 29.7-29.7 29.7L77.7 512C61.3 512 48 498.7 48 482.3zM544 96c13.3 0 24 10.7 24 24l0 48 48 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-48 0 0 48c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-48-48 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0 0-48c0-13.3 10.7-24 24-24z"
-                />
-              </svg>
+              <FontAwesomeIcon icon={faUserPlus} className="svg-inline--fa fa-user-plus me-2" />
               <span>Create My Account</span>
             </button>
           </form>
           <p className="border-t pt-10 border-gray-300/30 my-4 text-center">
             Already have an account?{/* */}{" "}
-            <a
+            <Link
               className="text-primary-600 hover:underline font-medium"
               href="/login"
             >
               Sign In
-            </a>
+            </Link>
           </p>
         </div>
       </div>
