@@ -35,7 +35,7 @@ export default async function Cart() {
                 </div>
               </div>
             </div> */}
-          <InnerCart cart={cart} />
+          {/* <InnerCart cart={cart} /> */}
         </div>
       </div>
 
