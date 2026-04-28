@@ -100,13 +100,13 @@ export default function InnerCart({ cart }: { cart: ICart<IProduct> }) {
   }
 
 
-  // useEffect( () => {
-  //   if(cartCards.products.length == 0){
-  //     setCartCount(cartCards.products.length);
+  useEffect( () => {
+    if(cartCards.products.length == 0){
+      setCartCount(cartCards.products.length);
 
-  //   }
+    }
     
-  // }, [cartCards]);
+  }, [cartCards]);
 
   return (
     <div>
@@ -116,7 +116,7 @@ export default function InnerCart({ cart }: { cart: ICart<IProduct> }) {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
               <div className="space-y-4">
-                {cartCards.products.map((cartProduct, index) => {
+                {/* {cartCards.products.map((cartProduct, index) => {
                   return (
                     <CartCard
                       key={"cart_product_" + index}
@@ -126,7 +126,7 @@ export default function InnerCart({ cart }: { cart: ICart<IProduct> }) {
                       MySwal={MySwal}
                     />
                   );
-                })}
+                })} */}
               </div>
               <div className="mt-6 pt-6 border-t border-gray-200 flex items-center justify-between">
                 <Link
