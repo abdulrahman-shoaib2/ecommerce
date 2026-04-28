@@ -69,6 +69,7 @@ export default function InnerCart() {
     try {
       const { data: cart } = await cartServices.getUserCart();
       setCartCards(cart);
+      setCartCount(cartCards!.products.length)
     } catch (e) {
 
     } finally {

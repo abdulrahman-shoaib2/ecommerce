@@ -1,10 +1,15 @@
 import { IReqParams } from "@/interfaces/IReqParams";
 import { IReqOptions } from "@/interfaces/IReqOptions";
+import { getSession } from "next-auth/react";
+
 
 export const routeAPI = async <T>({ endpoint, options = { method: 'GET' }, queries }: { endpoint: string, options?: IReqParams, queries?: Record<string, string> }): Promise<T> => {
   //  Promise<IProductsApiResponse>
   const root = process.env.NEXT_PUBLIC_BASE_URL;
-  const token: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZWE1ZTEyN2ViMWQzNDg1MzgyYzc0YSIsIm5hbWUiOiJBaG1lZCBBYmQgQWwtTXV0aSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzc3MjE5ODgxLCJleHAiOjE3ODQ5OTU4ODF9.S76LJ8Be4Ntb0855IVGcwVhNz34UL8KOhykmKXKXcS0';
+  // const token: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZWE1ZTEyN2ViMWQzNDg1MzgyYzc0YSIsIm5hbWUiOiJBaG1lZCBBYmQgQWwtTXV0aSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzc3MjE5ODgxLCJleHAiOjE3ODQ5OTU4ODF9.S76LJ8Be4Ntb0855IVGcwVhNz34UL8KOhykmKXKXcS0';
+  
+  const session = await getSession();
+  const token = session?.user.token
 
   let requestOptions: IReqOptions;
   if(options.Authorization ||options.token||options.contentType){
