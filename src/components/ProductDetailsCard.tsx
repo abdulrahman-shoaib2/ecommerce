@@ -1,17 +1,46 @@
+"use client";
 import Link from "next/link";
 import ImageCarousel from "./ImageCarousel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRotateLeft, faBolt, faCartShopping, faMinus, faPlus, faShareNodes, faShieldHalved, faStar, faTruckFast } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRotateLeft, faBolt, faCartShopping, faMinus, faPlus, faShareNodes, faShieldHalved, faSpinner, faStar, faTruckFast } from "@fortawesome/free-solid-svg-icons";
 import { IProductDetails } from "@/interfaces/routeApi/response/IProduct";
 import { getStarRating } from "@/lib/utils";
 import { Button } from "./ui/button";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
+import { cartServices } from "@/services/cartServices";
+import { useContext, useState } from "react";
+import { Loader2 } from "lucide-react";
+import { toast } from "sonner";
+import { cartContext } from "@/contexts/cartContext";
 
 export default function ProductDetailsCard({
   product,
 }: {
   product: IProductDetails;
 }) {
+  const [isLoading, setIsLoading] = useState<boolean>(false)
+          const {setCartCount} = useContext(cartContext);
+  
+  async function addToCart() {
+    try {
+      setIsLoading(true)
+      const response = await cartServices.addToCart({ productId: product.id });
+      setCartCount(response.numOfCartItems)
+      toast.success(response.message,{
+        style:{
+          color:"green",
+          
+        }
+      })
+      
+    } catch (error) {
+
+    } finally {
+      setIsLoading(false)
+    }
+
+
+  }
   return (
     <section id="product-detail" className="py-6">
       <div className="container mx-auto px-4">
@@ -59,7 +88,7 @@ export default function ProductDetailsCard({
                     </span>
                     <span className="bg-red-500 text-white text-sm px-3 py-1 rounded-full font-medium">
                       Save{" "}
-                      {Number(product.priceAfterDiscount / product.price) * 100}
+                      {(Number(product.priceAfterDiscount / product.price) * 100).toFixed(0)}
                       %
                     </span>
                   </>
@@ -107,7 +136,7 @@ export default function ProductDetailsCard({
                       defaultValue={1}
                     />
                     <button
-                    title="increase"
+                      title="increase"
                       id="increase-qty"
                       className="px-4 py-3 text-gray-600 hover:bg-gray-100 hover:text-primary-600 transition disabled:opacity-50"
                     >
@@ -130,9 +159,17 @@ export default function ProductDetailsCard({
               <div className="flex flex-col sm:flex-row gap-3 mb-6">
                 <button
                   id="add-to-cart"
-                  className="flex-1 text-white py-3.5 px-6 rounded-xl font-medium hover:bg-primary-700 active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary-600/25 bg-primary-600"
+                  disabled={isLoading}
+                  title="add to cart"
+                  className="flex-1 text-white py-3.5 px-6 rounded-xl font-medium hover:bg-primary-700 active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary-600/25 bg-primary-600 disabled:bg-primary-600/50 "
+                  onClick={addToCart}
                 >
-                  <FontAwesomeIcon icon={faCartShopping} className="svg-inline--fa fa-cart-shopping" />
+                  {
+                    isLoading ?
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                    :
+                    <FontAwesomeIcon icon={faCartShopping} className="svg-inline--fa fa-cart-shopping" />
+                  }
                   Add to Cart
                 </button>
                 <button
@@ -149,10 +186,10 @@ export default function ProductDetailsCard({
                   id="wishlist-button"
                   className="flex-1 border-2 py-3 px-4 rounded-xl font-medium transition flex items-center justify-center gap-2 border-gray-200 text-gray-700 hover:border-primary-300 hover:text-primary-600"
                 >
-                  <FontAwesomeIcon icon={faHeart} className="svg-inline--fa fa-heart" />
+                    <FontAwesomeIcon icon={faHeart} className="svg-inline--fa fa-heart" />
                   Add to Wishlist
                 </button>
-              <button title="share" className="border-2 border-gray-200 text-gray-700 py-3 px-4 rounded-xl hover:border-primary-300 hover:text-primary-600 transition">
+                <button title="share" className="border-2 border-gray-200 text-gray-700 py-3 px-4 rounded-xl hover:border-primary-300 hover:text-primary-600 transition">
                   <FontAwesomeIcon icon={faShareNodes} className="svg-inline--fa fa-share-nodes" />
                 </button>
               </div>

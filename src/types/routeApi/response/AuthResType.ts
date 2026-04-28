@@ -6,7 +6,7 @@ import { IMetadata } from '@/interfaces/routeApi/response/IMetadata';
 
 // Full login/auth response
 export type AuthResType = {
-  message: string;
+  message: "success" | "Incorrect email or password";
 }
 
 // Full login/auth response

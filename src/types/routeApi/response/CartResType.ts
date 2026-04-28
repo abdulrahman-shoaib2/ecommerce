@@ -1,5 +1,6 @@
 import { ICart, ICartCleared } from "@/interfaces/routeApi/response/ICart";
 import { ResponseType } from "./ResponseType";
+import { IProduct } from "@/interfaces/routeApi/response/IProduct";
 
 
 
@@ -12,7 +13,8 @@ export type CartResType<T> = ResponseType<T> & {
   cartId: string | null;
 }
 
-export type CartActionResType = CartResType<ICart>;
+export type CartActionResType = CartResType<ICart<IProduct>>;
+// export type CartActionResType = CartResType<ICart<string>>;
 
 
 /*

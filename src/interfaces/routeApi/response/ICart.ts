@@ -1,10 +1,10 @@
 import { IProduct } from "./IProduct";
 
 // Cart data object
-export interface ICart {
+export interface ICart<T> {
   _id: string;
   cartOwner: string; // user ID
-  products: IProduct[] | string[];
+  products:ICartProduct<T>[];
   createdAt: string;
   updatedAt: string;
   __v: number;
@@ -16,3 +16,11 @@ export interface ICartCleared {
   products: string[]
 }
 
+export interface ICartProduct<T> {
+
+  count: number;
+  _id: string;
+  price: number;
+  product: T;
+
+}

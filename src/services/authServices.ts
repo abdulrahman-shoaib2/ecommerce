@@ -7,9 +7,11 @@ export const authServices ={
    * @param data {email as string, password as string} 
    * @returns `message` as string , user as object with "IUser & {role}" , `token` as string
    */
-  signIn:async (data:{email:string,password:string})=> await routeAPI<UserResType>({endpoint:'api/v1/auth/signin',options:{
+  signIn:async (email:string, password:string)=> await routeAPI<UserResType>({endpoint:'api/v1/auth/signin',options:{
     method:'POST',
-    body:JSON.stringify(data)
+    contentType:'application/json',
+    body:JSON.stringify({email,password})
+    // body:{email,password}
   }}),
 
   /**
@@ -94,3 +96,4 @@ export const authServices ={
 
 
 }
+

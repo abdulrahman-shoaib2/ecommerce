@@ -1,3 +1,4 @@
+"use client"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar as faStarOutline } from "@fortawesome/free-regular-svg-icons";
 import Link from "next/link";
@@ -5,8 +6,36 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 import { faArrowsRotate, faEye, faHeart, faPlus, faStar, faStarHalfStroke } from "@fortawesome/free-solid-svg-icons";
 import { IProductDetails } from '@/interfaces/routeApi/response/IProduct';
+import { cartServices } from '@/services/cartServices';
+import { useContext, useState } from 'react';
+import { toast } from 'sonner';
+import { Loader2 } from 'lucide-react';
+import { cartContext } from '@/contexts/cartContext';
 
-export default function ProductCard({ product, classNames }: { product: IProductDetails, classNames?:string }) {
+export default function ProductCard({ product, classNames }: { product: IProductDetails, classNames?: string }) {
+  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const { setCartCount } = useContext(cartContext);
+
+  async function addToCart() {
+    try {
+      setIsLoading(true)
+      const response = await cartServices.addToCart({ productId: product.id });
+      setCartCount(response.numOfCartItems)
+      toast.success(response.message, {
+        style: {
+          color: "green",
+
+        }
+      })
+
+    } catch (error) {
+
+    } finally {
+      setIsLoading(false)
+    }
+
+
+  }
   return (
 
     <div
@@ -18,7 +47,7 @@ export default function ProductCard({ product, classNames }: { product: IProduct
           className=" w-full max-h-80 min-h-80 object-contain bg-white"
           alt={product.title}
           src={product.imageCover}
-          // src={product.thumbnail}
+        // src={product.thumbnail}
         />
         {
           product.priceAfterDiscount && <div className="absolute top-3 left-3"><span className="bg-red-500 text-white text-xs px-2 py-1 rounded">-{Math.floor((1 - product.priceAfterDiscount / product.price) * 100)}%</span></div>
@@ -93,8 +122,13 @@ export default function ProductCard({ product, classNames }: { product: IProduct
                 </span>
               </div>
           } */}
-          <Button className="h-10 w-10 rounded-full flex items-center justify-center transition bg-primary-600 text-white hover:bg-primary-700 disabled:opacity-70" >
-            <FontAwesomeIcon icon={faPlus} className="svg-inline--fa fa-plus" />
+          <Button disabled={isLoading} className="h-10 w-10 rounded-full flex items-center justify-center transition bg-primary-600 text-white active:scale-[90%] hover:bg-primary-700 disabled:bg-primary-600/50" onClick={addToCart} >
+            {
+              isLoading ?
+                <Loader2 className='w-5 h-5 animate-spin' />
+                :
+                <FontAwesomeIcon icon={faPlus} className="svg-inline--fa fa-plus" />
+            }
           </Button>
         </div>
       </div>

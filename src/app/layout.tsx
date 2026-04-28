@@ -7,6 +7,8 @@ import Offcanvas from "@/components/Offcanvas";
 import ProvidersWrapper from "@/providers/ProvidersWrapper";
 import HeaderStrip from "@/components/HeaderStrip";
 import FooterStrip from "@/components/FooterStrip";
+import { Toaster } from "@/components/ui/sonner";
+import CartContextProvider from "@/contexts/cartContext";
 
 const exo = Exo({
   variable: "--font-exo",
@@ -46,14 +48,15 @@ export default function RootLayout({
       className={`${exo.className}  h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        {<HeaderStrip />}
         <ProvidersWrapper>
-          {<Navbar />}
-          {<Offcanvas />}
+          <HeaderStrip />
+          <Navbar />
+          <Offcanvas />
+          {children}  
         </ProvidersWrapper>
-        {children}
-        {<FooterStrip />}
-        {<Footer />}
+        <Toaster/>
+        <FooterStrip />
+        <Footer />
       </body>
     </html>
   );

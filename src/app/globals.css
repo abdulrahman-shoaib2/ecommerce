@@ -224,8 +224,10 @@
     @apply cursor-pointer;
   }
 
-
-
+  input[type="password"]::-ms-reveal,
+  input[type="password"]::-ms-clear {
+    display: none;
+  }
 }
 
 @layer utilities {
@@ -286,9 +288,9 @@
     --tw-duration: 0.2s;
     transition-duration: 0.2s;
   }
-  .form-control{
-        padding-inline: calc(var(--spacing)*3);
-    padding-block: calc(var(--spacing)*2);
-    @apply rounded-md border
+  .form-control {
+    padding-inline: calc(var(--spacing) * 3);
+    padding-block: calc(var(--spacing) * 2);
+    @apply rounded-md border;
   }
 }

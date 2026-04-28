@@ -40,7 +40,7 @@ export default function PageHeader({ classNames, textColor, links, badge, sectio
             if(links.length -1 == index) return <span key={'link'+index} className={`text-${textColor} font-medium`}>{link.displayAs}</span>
 
             return (<span key={'link'+index} className='flex items-center gap-2 flex-nowrap'>
-              <Link className="hover:text-white transition-colors" href="/">
+              <Link className={`hover:text-${textColor} transition-colors`} href="/">
                 {link.displayAs}
               </Link>
               <span className={`text-${textColor}/40`}>/</span>

@@ -1,4 +1,5 @@
 "use client"
+import { cartServices } from "@/services/cartServices";
 import { createContext, ReactNode, Dispatch,  useEffect, useState, SetStateAction } from "react";
 
 export const cartContext = createContext<{
@@ -8,7 +9,7 @@ export const cartContext = createContext<{
 	}>({
 		cartCount: 0,
 		setCartCount: () => {},
-		isLoading:true
+    isLoading:false,
 	})
 	
 export default function CartContextProvider({
@@ -19,17 +20,18 @@ export default function CartContextProvider({
 	const [cartCount, setCartCount] = useState(0);
 	const [isLoading, setIsLoading] = useState(true);
 		
-	// async function getCart() {
-	// setIsLoading(true)
-	// 	const response = await apiServices.getUserCart();
-	// 	setCartCount(response.numOfCartItems);
-	// 	setIsLoading(false)
-	// }
+	async function getCart() {
+	setIsLoading(true)
+		const response = await cartServices.getUserCart();
+		setCartCount(response.numOfCartItems);
+		setIsLoading(false)
+	}
 
-	// useEffect(() =>{
-	// 	getCart();
-	// }, []);
+	useEffect(() =>{
+		getCart();
+	}, []);
 	
+  // 
 	return (
 		<cartContext.Provider value={{ cartCount, setCartCount, isLoading}}>
 			{children}

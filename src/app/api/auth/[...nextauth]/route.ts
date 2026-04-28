@@ -8,28 +8,25 @@ const handler = NextAuth({
     CredentialsProvider({
       name: 'Credentials',
       credentials: {
-        email: { label: "Email", type: "email", placeholder: "Please Enter Your Email" },
+        email: { label: "Email", type: "email", placeholder: "Enter Your Email" },
         password: { label: "Password", type: "password", placeholder: "Enter Your Password" },
 
       },
-      async authorize(credentials, req) {
-
-        const response = await authServices.signIn(credentials?.email ?? "", credentials?.password ?? "");
-        if (response.ok) {
+      async authorize(credentials) {
+        const res = await authServices.signIn(credentials?.email ?? "", credentials?.password ?? "");
+        if (res.message == "success") {
           const user = {
-            id: response.user.email,
-            name: response.user.name,
-            email: response.user.email,
-            role: response.user.role,
-            token: response.token
-
+            id: res.user.email,
+            name: res.user.name,
+            email: res.user.email,
+            role: res.user.role,
+            token: res.token
           }
-          return user;
-
+          return user
         } else {
-
           return null
         }
+
 
       }
     })
@@ -39,15 +36,13 @@ const handler = NextAuth({
   },
   callbacks: {
     async session({ session, token }) {
-      if(session.user){
-        session.user.role = token.role as string;
-        session.user.token = token.token as string;
-
-      }
-
+      session.user.role = token.role as string;
+      session.user.token = token.token as string;
+      // if (session.user) {
+      // }
       return session;
     },
-		async jwt({ token, user }) {
+    async jwt({ token, user }) {
       if (user) {
         token.token = user.token;
         token.role = user.role;
@@ -55,7 +50,7 @@ const handler = NextAuth({
       return token;
     }
   },
-  secret: process.env.AUTH_SECRET,
+  secret: process.env.BETTER_AUTH_SECRET,
   session: {
     strategy: 'jwt',
   }
