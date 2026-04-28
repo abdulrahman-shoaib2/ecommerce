@@ -61,7 +61,7 @@ export default function InnerCart({ cart }: { cart: ICart<IProduct> }) {
     },
     sectionInfo: {
       name: "Shopping Cart",
-      desc: `You have ${cartCards.products?.length} item in your cart`,
+      desc: `You have ${cartCards.products.length} item in your cart`,
     },
   };
   async function clearCart() {
@@ -100,23 +100,23 @@ export default function InnerCart({ cart }: { cart: ICart<IProduct> }) {
   }
 
 
-  useEffect( () => {
-    if(cartCards.products){
-      setCartCount(cartCards.products?.length);
+  // useEffect( () => {
+  //   if(cartCards.products.length == 0){
+  //     setCartCount(cartCards.products.length);
 
-    }
+  //   }
     
-  }, [cartCards]);
+  // }, [cartCards]);
 
   return (
     <div>
-      {cartCards.products?.length > 0 ? (
+      {cartCards && cartCards.products.length > 0 ? (
         <>
           <PageHeader {...section} />
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
               <div className="space-y-4">
-                {cartCards.products?.map((cartProduct, index) => {
+                {cartCards.products.map((cartProduct, index) => {
                   return (
                     <CartCard
                       key={"cart_product_" + index}
@@ -164,7 +164,7 @@ export default function InnerCart({ cart }: { cart: ICart<IProduct> }) {
                       Order Summary
                     </h2>
                     <p className="text-primary-100 text-sm mt-1">
-                      {cartCards.products?.length} items in your cart
+                      {cartCards.products.length} items in your cart
                     </p>
                   </div>
                   <div className="p-6 space-y-5">
@@ -290,7 +290,7 @@ export default function InnerCart({ cart }: { cart: ICart<IProduct> }) {
                   </div>
                   <div className="p-5 space-y-4">
                     <div className="flex justify-between text-gray-600">
-                      <span>Subtotal ({cartCards.products?.length} items)</span>
+                      <span>Subtotal ({cartCards.products.length} items)</span>
                       <span className="font-semibold">
                         {cartCards.totalCartPrice.toLocaleString()} EGP
                       </span>
