@@ -25,11 +25,11 @@ import { cartContext } from "@/contexts/cartContext";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
+export default function InnerCart() {
 
-export default function InnerCart({ cart }: { cart: ICart<IProduct> }) {
   const MySwal = withReactContent(Swal);
   const [isClearing, setIsClearing] = useState(false);
-  const [cartCards, setCartCards] = useState<ICart<IProduct>>(cart);
+  const [cartCards, setCartCards] = useState<ICart<IProduct>>();
   const { setCartCount } = useContext(cartContext);
   const loggedIn = true;
 
@@ -61,16 +61,29 @@ export default function InnerCart({ cart }: { cart: ICart<IProduct> }) {
     },
     sectionInfo: {
       name: "Shopping Cart",
-      desc: `You have ${cartCards.products.length} item in your cart`,
+      desc: `You have ${cartCards?.products.length} item in your cart`,
     },
   };
+
+  async function getCart() {
+    try {
+      const { data: cart } = await cartServices.getUserCart();
+      setCartCards(cart);
+    } catch (e) {
+
+    } finally {
+
+    }
+  }
   async function clearCart() {
     try {
       setIsClearing(true);
       const res = await cartServices.clearUserCart();
-      const deepCopy = structuredClone(cartCards);
-      deepCopy.products = [];
-      setCartCards(deepCopy);
+      if(cartCards){
+        const deepCopy = structuredClone(cartCards);
+        deepCopy.products = [];
+        setCartCards(deepCopy);
+      }
     } catch (error) {
     } finally {
       setIsClearing(false);
@@ -100,23 +113,23 @@ export default function InnerCart({ cart }: { cart: ICart<IProduct> }) {
   }
 
 
-  useEffect( () => {
-    if(cartCards.products.length == 0){
-      setCartCount(cartCards.products.length);
+  useEffect(() => {
+    getCart()
+    if(cartCards){
+      setCartCount(cartCards?.products.length);
 
     }
-    
   }, [cartCards]);
 
   return (
     <div>
-      {cartCards && cartCards.products.length > 0 ? (
+      {cartCards && cartCards?.products.length > 0 ? (
         <>
           <PageHeader {...section} />
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
               <div className="space-y-4">
-                {/* {cartCards.products.map((cartProduct, index) => {
+                {cartCards.products.map((cartProduct, index) => {
                   return (
                     <CartCard
                       key={"cart_product_" + index}
@@ -126,7 +139,7 @@ export default function InnerCart({ cart }: { cart: ICart<IProduct> }) {
                       MySwal={MySwal}
                     />
                   );
-                })} */}
+                })}
               </div>
               <div className="mt-6 pt-6 border-t border-gray-200 flex items-center justify-between">
                 <Link
@@ -189,15 +202,15 @@ export default function InnerCart({ cart }: { cart: ICart<IProduct> }) {
                         :
                         <div className="bg-gradient-to-r from-orange-50 to-amber-50 rounded-xl p-4">
                           <div className="flex items-center gap-2 mb-2">
-                            <FontAwesomeIcon icon={faTruck} className="svg-inline--fa fa-truck text-orange-500"/>
+                            <FontAwesomeIcon icon={faTruck} className="svg-inline--fa fa-truck text-orange-500" />
                             <span className="text-sm font-medium text-gray-700">
-                              Add {500 - cartCards.totalCartPrice } EGP for free shipping
+                              Add {500 - cartCards.totalCartPrice} EGP for free shipping
                             </span>
                           </div>
                           <div className="h-2 bg-orange-100 rounded-full overflow-hidden">
                             <div
                               className="h-full bg-gradient-to-r from-orange-400 to-amber-400 rounded-full transition-all duration-500"
-                              style={{ width: `${cartCards.totalCartPrice/500*100}%` }}
+                              style={{ width: `${cartCards.totalCartPrice / 500 * 100}%` }}
                             />
                           </div>
                         </div>

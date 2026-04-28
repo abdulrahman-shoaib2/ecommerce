@@ -1,8 +1,6 @@
 import InnerCart from "@/components/InnerCart";
-import { cartServices } from "@/services/cartServices";
 
-export default async function Cart() {
-  const { data: cart } = await cartServices.getUserCart();
+export default function Cart() {
 
 
   return (
@@ -35,7 +33,7 @@ export default async function Cart() {
                 </div>
               </div>
             </div> */}
-          <InnerCart cart={cart} />
+          <InnerCart />
         </div>
       </div>
 

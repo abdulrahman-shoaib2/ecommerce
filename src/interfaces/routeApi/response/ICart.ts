@@ -4,7 +4,7 @@ import { IProduct } from "./IProduct";
 export interface ICart<T> {
   _id: string;
   cartOwner: string; // user ID
-  products:ICartProduct<T>[];
+  products: ICartProduct<T>[];
   createdAt: string;
   updatedAt: string;
   __v: number;
@@ -24,3 +24,6 @@ export interface ICartProduct<T> {
   product: T;
 
 }
+
+
+
