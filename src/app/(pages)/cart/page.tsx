@@ -1,6 +1,4 @@
 import InnerCart from "@/components/InnerCart";
-import { ICart } from "@/interfaces/routeApi/response/ICart";
-import { IProduct } from "@/interfaces/routeApi/response/IProduct";
 import { cartServices } from "@/services/cartServices";
 
 export default async function Cart() {
