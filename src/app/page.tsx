@@ -6,6 +6,7 @@ import OfferSection from "@/app/_components/OfferSection";
 import ProductsSection from "@/app/_components/ProductsSection";
 import SectionHeader from "@/components/shared/SectionHeader";
 import { Suspense } from "react";
+import { Loader2 } from "lucide-react";
 
 export default function Home() {
   return (
