@@ -1,5 +1,5 @@
 import PageHeader from "@/components/shared/PageHeader";
-import { ordersServices } from "@/services/ordersServices";
+import { ordersServices } from "@/services/routeAPI/ordersServices";
 import { faArrowLeft, faBagShopping, faBox, faCheck, faCircleInfo, faCity, faCreditCard, faHouse, faLocationDot, faMoneyBill, faPhone, faReceipt, faShieldHalved, faTruck, faWallet } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Loader2 } from "lucide-react";
