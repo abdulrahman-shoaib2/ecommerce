@@ -1,4 +1,4 @@
-import InnerCart from "@/components/InnerCart";
+import InnerCart from "@/app/(pages)/cart/_components/InnerCart";
 
 export default function Cart() {
 

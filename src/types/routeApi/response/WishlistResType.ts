@@ -1,4 +1,4 @@
-import { IProductDetails } from "@/interfaces/routeApi/response/IProduct";
+import { IProductDetails, IWishlistProduct } from "@/interfaces/routeApi/response/IProduct";
 import { ResponseType } from "./ResponseType";
 
 export type WishlistResType<T> = ResponseType<T[]>&{
@@ -19,7 +19,12 @@ export type ToggleWishlist = WishlistResType<string> & {
 }
 */
 
+export type addToWishlistType = WishlistResType<IWishlistProduct>& {
+  count:number;
+}
 
 export type GetWishlist = WishlistResType<IProductDetails> & {
   count:number;
 }
+
+

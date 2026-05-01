@@ -1,5 +1,5 @@
 "use client"
-import { cartServices } from "@/services/cartServices";
+import { cartServices } from "@/services/routeAPI/cartServices";
 import { createContext, ReactNode, Dispatch,  useEffect, useState, SetStateAction } from "react";
 
 export const cartContext = createContext<{

@@ -1,4 +1,4 @@
-import PageHeader from "@/components/PageHeader";
+import PageHeader from "@/components/shared/PageHeader";
 import { Button } from "@/components/ui/button";
 import { formatPhoneNumber } from "@/helpers/utils";
 import { faFacebookF, faInstagram, faLinkedinIn, faTwitter } from "@fortawesome/free-brands-svg-icons";
@@ -6,6 +6,7 @@ import { faEnvelope, faHeadset, faLocationDot, faPhone, faClock, faPaperPlane, f
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import React from "react";
+import ContactForm from "./_components/ContactForm";
 
 export default function page() {
     const section = {
@@ -205,91 +206,7 @@ export default function page() {
                     </p>
                   </div>
                 </div>
-                <form className="space-y-5">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    <div>
-                      <label
-                        htmlFor="name"
-                        className="block text-sm font-medium text-gray-700 mb-2"
-                      >
-                        Full Name
-                      </label>
-                      <input
-                        id="name"
-                        required
-                        placeholder="John Doe"
-                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all"
-                        type="text"
-                        
-                        name="name"
-                      />
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="email"
-                        className="block text-sm font-medium text-gray-700 mb-2"
-                      >
-                        Email Address
-                      </label>
-                      <input
-                        id="email"
-                        required
-                        placeholder="john@example.com"
-                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all"
-                        type="email"
-                        
-                        name="email"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="subject"
-                      className="block text-sm font-medium text-gray-700 mb-2"
-                    >
-                      Subject
-                    </label>
-                    <select
-                      id="subject"
-                      name="subject"
-                      required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all bg-white"
-                    >
-                      <option value="">Select a subject</option>
-                      <option value="general">General Inquiry</option>
-                      <option value="order">Order Support</option>
-                      <option value="shipping">Shipping Question</option>
-                      <option value="returns">Returns &amp; Refunds</option>
-                      <option value="product">Product Information</option>
-                      <option value="feedback">Feedback &amp; Suggestions</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="message"
-                      className="block text-sm font-medium text-gray-700 mb-2"
-                    >
-                      Message
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      required
-                      rows={5}
-                      placeholder="How can we help you?"
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all resize-none"
-                      defaultValue={""}
-                    />
-                  </div>
-                  <Button
-                    type="submit"
-                    className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-primary-600 text-white font-semibold hover:bg-primary-700 transition-colors disabled:opacity-70 disabled:cursor-not-allowed shadow-sm shadow-primary-600/20"
-                  >
-                    <FontAwesomeIcon icon={faPaperPlane} className="svg-inline--fa fa-paper-plane" />
-                    Send Message
-                  </Button>
-                </form>
+                  <ContactForm />
               </div>
               <div className="mt-6 bg-primary-50 rounded-2xl p-6 border border-primary-100">
                 <div className="flex items-start gap-4">

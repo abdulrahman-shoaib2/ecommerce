@@ -10,23 +10,18 @@ const nextConfig: NextConfig = {
 				permanent: true, 
 			},
 			{
-				source: "/register", 
-				destination: '/auth/register',
-				permanent: true, 
-			},
-			{
 				source: "/signup", 
-				destination: '/auth/register',
-				permanent: true, 
-			},
-			{
-				source: "/login", 
-				destination: '/auth/login',
+				destination: '/register',
 				permanent: true, 
 			},
 			{
 				source: '/signin', 
-				destination: '/auth/login',
+				destination: '/login',
+				permanent: true, 
+			},
+			{
+				source: '/allorders',  // test protection
+				destination: '/orders',
 				permanent: true, 
 			},
 		]

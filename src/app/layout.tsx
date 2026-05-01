@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
 import { Exo, } from "next/font/google";
 import "./globals.css";
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
-import Offcanvas from "@/components/Offcanvas";
+import Footer from "@/components/layouts/Footer/Footer";
+import Navbar from "@/components/layouts/Navbar/Navbar";
+import Offcanvas from "@/components/layouts/Offcanvas";
 import ProvidersWrapper from "@/providers/ProvidersWrapper";
-import HeaderStrip from "@/components/HeaderStrip";
-import FooterStrip from "@/components/FooterStrip";
+import HeaderStrip from "@/components/layouts/Navbar/HeaderStrip";
+import FooterStrip from "@/components/layouts/Footer/FooterStrip";
 import { Toaster } from "@/components/ui/sonner";
 import CartContextProvider from "@/contexts/cartContext";
+// import "ag-grid-community/styles/ag-grid.css";
+// import "ag-grid-community/styles/ag-theme-quartz.css";
 
 const exo = Exo({
   variable: "--font-exo",

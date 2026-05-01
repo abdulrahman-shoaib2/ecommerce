@@ -1,5 +1,5 @@
-import CategoriesSection from '@/components/CategoriesSection'
-import PageHeader from '@/components/PageHeader'
+import CategoriesSection from '@/app/(pages)/categories/_components/CategoriesSection'
+import PageHeader from '@/components/shared/PageHeader'
 import { faLayerGroup } from '@fortawesome/free-solid-svg-icons'
 
 export default function Categories() {

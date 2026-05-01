@@ -1,3 +1,41 @@
+
+home
+  orders (allorders)
+  (auth)
+    forget-password (Forgot Password?)
+    login
+    register (Create Account, Create an account)
+    reset-password
+    verfiy-code
+  brands
+  categories
+    [categoryId]
+  checkout
+  products
+    ? (search by category and brand and subcategory)
+    [productId]
+  profile ❌
+    addresses ✅ (My Account)
+    settings ✅
+    orders ❌ (profile/orders)
+  search
+  wishlist
+  search
+  cart (Shopping Cart)
+  privacy (Privacy Policy)
+  terms (Terms of Service)
+  contact (Contact Us)
+
+  shipping  (Shipping Info)
+  help (Help Center)
+  cookie (Cookie Policy)
+  returns (Returns & Refunds)
+  track-order (Track Order)
+
+password Weak bar
+sign up/sign in with google or facebook
+i agree to the terms of service and privacy policy
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

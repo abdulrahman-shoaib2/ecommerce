@@ -8,12 +8,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export const formatPrice = (price: number) => {
-	return new Intl.NumberFormat("en-US", {
-		style: "currency",
-		currency: "EGP"
-		}).format(price);
-}
+
 
 export const getStarRating = (rating: string | number) => {
   // Convert the rating to a float if it's passed as a string
@@ -41,7 +36,11 @@ export const getStarRating = (rating: string | number) => {
   for (let i = 0; i < emptyStars; i++) {
     stars.push(faStarOutline);  // Empty star class
   }
-  
+  for(let i =0; stars.length <5;i++){
+    stars.push(faStarOutline);  // Empty star class
+    
+  }
+
   // Return the star classes joined as a string (for rendering)
   return stars;
 }

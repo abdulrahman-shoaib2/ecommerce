@@ -1,8 +1,8 @@
-import ProductDetailsSection from '@/components/ProductDetailsSection'
-import SimilarProducts from '@/components/SimilarProducts'
 import { IProduct, IProductDetails } from '@/interfaces/routeApi/response/IProduct';
-import { productsService } from '@/services/productsServices';
+import { productsService } from '@/services/routeAPI/productsServices';
 import React from 'react'
+import SimilarProducts from './_components/SimilarProducts';
+import ProductDetailsSection from './_components/ProductDetailsSection';
 
 export default async function ProductsDetails({params}:{params:Promise<{productId:string}>}) {
   const productId:string = await params.then((res:any)=>res.productId);

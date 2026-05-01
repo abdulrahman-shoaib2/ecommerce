@@ -1,4 +1,4 @@
-import PageHeader from "@/components/PageHeader";
+import PageHeader from "@/components/shared/PageHeader";
 import { ordersServices } from "@/services/ordersServices";
 import { faArrowLeft, faBagShopping, faBox, faCheck, faCircleInfo, faCity, faCreditCard, faHouse, faLocationDot, faMoneyBill, faPhone, faReceipt, faShieldHalved, faTruck, faWallet } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

@@ -3,8 +3,8 @@ export interface IBrand {
   name: string;
   slug: string;
   image: string;
-  createdAt?: string; // ISO date string
-  updatedAt?: string; // ISO date string
+  createdAt?: string; 
+  updatedAt?: string; 
   "__v"?: 0;
 
 }

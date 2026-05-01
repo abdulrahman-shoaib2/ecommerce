@@ -1,7 +1,6 @@
-import PageHeader from "@/components/PageHeader";
-import ProductsSection from "@/components/ProductsSection";
+import PageHeader from "@/components/shared/PageHeader";
+import ProductsSection from "@/app/_components/ProductsSection";
 import { faBoxOpen } from "@fortawesome/free-solid-svg-icons";
-import React from "react";
 
 export default function Products() {
   const section = {
@@ -36,7 +35,12 @@ export default function Products() {
   return (
     <>
       <PageHeader  {...section} />
-      <ProductsSection withHeader={false} showItemCount={true} />
+      <section className="py-10">
+        <div className="container mx-auto">
+          <ProductsSection showItemCount={true} />
+
+        </div>
+      </section>
     </>
   );
 }

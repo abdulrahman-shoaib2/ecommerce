@@ -12,11 +12,12 @@ export async function proxy(request: NextRequest) {
   // }
   const { pathname } = request.nextUrl;
 
-  const authPages = ['/signin', '/signup'];
+  const authPages = ['/login', '/register'];
 
   const protectedPages = [
     '/profile',
     '/orders',
+    '/allorders',
     '/settings',
     '/addresses',
   ];

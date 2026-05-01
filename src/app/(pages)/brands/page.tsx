@@ -1,6 +1,6 @@
-import BrandsSection from '@/components/BrandsSection'
-import PageHeader from '@/components/PageHeader'
+import PageHeader from '@/components/shared/PageHeader'
 import { faTags } from '@fortawesome/free-solid-svg-icons'
+import BrandsSection from './_components/BrandsSection'
 
 export default function Brands() {
   const section = {
