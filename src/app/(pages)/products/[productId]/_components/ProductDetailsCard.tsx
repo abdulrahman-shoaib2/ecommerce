@@ -5,13 +5,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRotateLeft, faBolt, faCartShopping, faMinus, faPlus, faShareNodes, faShieldHalved, faSpinner, faStar, faTruckFast } from "@fortawesome/free-solid-svg-icons";
 import { IProductDetails } from "@/interfaces/routeApi/response/IProduct";
 import { getStarRating } from "@/lib/utils";
-import { Button } from "./ui/button";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { cartServices } from "@/services/routeAPI/cartServices";
 import { useContext, useState } from "react";
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { cartContext } from "@/contexts/cartContext";
+import { Button } from "@/components/ui/button";
 
 export default function ProductDetailsCard({
   product,
