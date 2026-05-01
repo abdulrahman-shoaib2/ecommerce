@@ -5,6 +5,7 @@ import Newletter from "@/app/_components/Newletter";
 import OfferSection from "@/app/_components/OfferSection";
 import ProductsSection from "@/app/_components/ProductsSection";
 import SectionHeader from "@/components/shared/SectionHeader";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
@@ -16,8 +17,10 @@ export default function Home() {
       <section className="py-10">
         <div className="container mx-auto">
           <SectionHeader title={{ text: "Featured ", highlight: "Products" }}
-            sectionName="Products"/>
-          <ProductsSection />
+            sectionName="Products" />
+          <Suspense fallback={<div className="min-h-[50vh] flex justify-center items-center"><Loader2 className="size-10 animate-spin" /></div>}>
+            <ProductsSection />
+          </Suspense>
         </div>
       </section>
       <Newletter />
