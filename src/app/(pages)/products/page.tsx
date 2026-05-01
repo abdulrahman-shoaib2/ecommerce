@@ -1,6 +1,8 @@
 import PageHeader from "@/components/shared/PageHeader";
 import ProductsSection from "@/app/_components/ProductsSection";
 import { faBoxOpen } from "@fortawesome/free-solid-svg-icons";
+import { Suspense } from 'react';
+import { Loader2 } from "lucide-react";
 
 export default function Products() {
   const section = {
@@ -32,12 +34,15 @@ export default function Products() {
       desc: 'Explore our complete product collection'
     }
   }
+  
   return (
     <>
       <PageHeader  {...section} />
       <section className="py-10">
         <div className="container mx-auto">
-          <ProductsSection showItemCount={true} />
+          <Suspense fallback={<div className="min-h-[50vh] flex justify-center items-center"><Loader2 className="size-10 animate-spin"/></div>}>
+            <ProductsSection showItemCount={true} />
+          </Suspense>
 
         </div>
       </section>

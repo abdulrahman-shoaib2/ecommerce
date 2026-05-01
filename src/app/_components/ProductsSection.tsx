@@ -15,12 +15,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { Loader2 } from "lucide-react";
-import { useDispatch, useSelector } from "react-redux";
-import { getAllProducts } from "@/redux/slices/productsSlice";
-import { AppDispatch, RootState } from "@/redux/store";
 import { useQuery } from "@tanstack/react-query";
 import { productsService } from "@/services/routeAPI/productsServices";
-import { Skeleton } from "@/components/ui/skeleton";
 import SkeletonProduct from "@/components/shared/SkeletonProduct";
 
 export default function ProductsSection({
