@@ -39,13 +39,14 @@ A modern, responsive e-commerce application built with Next.js and React, featur
 
 ## 📸 Screenshots
 
-| Home | Product |
-|------|---------|
-| image | image |
+### Home 
+![Home Page](./screenshots/homePage.png)
 
-| Cart | Wishlist |
-|------|-----------|
-| image | image |
+### Product 
+
+### Cart 
+
+### Wishlist
 
 ## 🏗 Project Structure
 
