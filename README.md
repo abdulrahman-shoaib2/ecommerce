@@ -55,7 +55,7 @@ A modern, responsive e-commerce application built with Next.js and React, featur
 
 src
 
-├── app
+├── app <br>
 ├── components
 ├── features
 ├── hooks
